@@ -1,0 +1,41 @@
+{
+  "name": "webcon-marketplace",
+  "owner": {
+    "name": "Webcon R&D",
+    "email": "rnd@webcon.com"
+  },
+  "metadata": {
+    "description": "Webcon community marketplace of Claude Code plugins (skills, MCP config) for working with WEBCON BPS.",
+    "ticket": "BT-US/7059",
+    "repository": "https://github.com/WEBCON-BPS/claude-plugin"
+  },
+  "plugins": [
+    {
+      "name": "webcon-mcp-assistant",
+      "source": "./plugins/webcon-mcp-assistant",
+      "description": "Read-only assistant skill for the General WEBCON MCP server (tasks, elements, search, navigation).",
+      "version": "0.2.0",
+      "author": {
+        "name": "Webcon R&D"
+      }
+    },
+    {
+      "name": "webcon-ai-agent-builder",
+      "source": "./plugins/webcon-ai-agent-builder",
+      "description": "Skill for creating and improving instructions for WEBCON AI agents (step-level instructions, agent behavior for workflow automation).",
+      "version": "0.1.0",
+      "author": {
+        "name": "Webcon R&D"
+      }
+    },
+    {
+      "name": "webcon-ai-prompt-builder",
+      "source": "./plugins/webcon-ai-prompt-builder",
+      "description": "PLACEHOLDER - not yet ported. See plugins/webcon-ai-prompt-builder/README.md.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Webcon R&D"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "webcon-ai-agent-builder",
+  "description": "Skill for creating and improving instructions for WEBCON AI agents (step-level instructions, agent behavior for workflow automation).",
+  "version": "0.1.0",
+  "author": {
+    "name": "Webcon R&D"
+  },
+  "keywords": ["webcon", "bps", "ai-agent", "instructions", "workflow"]
+}

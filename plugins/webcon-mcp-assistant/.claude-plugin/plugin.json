@@ -1,0 +1,24 @@
+{
+  "name": "webcon-mcp-assistant",
+  "description": "Read-only assistant skill for the General WEBCON MCP server (tasks, elements, search, navigation).",
+  "version": "0.2.0",
+  "author": {
+    "name": "Webcon R&D"
+  },
+  "keywords": ["webcon", "bps", "mcp", "tasks", "search"],
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "WEBCON MCP server URL",
+      "description": "Base URL of your General WEBCON MCP server. On-prem: https://portal.yourcompany.com/mcp - SaaS: https://<tenant>.webcon.cloud/mcp",
+      "required": true
+    },
+    "mcp_token": {
+      "type": "string",
+      "title": "WEBCON MCP token",
+      "description": "Bearer token / API key issued for your WEBCON MCP server.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
