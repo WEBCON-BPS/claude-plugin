@@ -1,12 +1,12 @@
 # WEBCON Claude Code Marketplace
 
 A [Claude Code](https://code.claude.com/docs) plugin marketplace with skills for
-working with **WEBCON BPS** — reading workflow data through the WEBCON MCP
+working with **WEBCON** — reading workflow data through the WEBCON MCP
 server and authoring AI-agent instructions and prompts for WEBCON automation.
 
 ## About WEBCON
 
-WEBCON BPS is a low-code Business Process Management platform for building and
+WEBCON is a low-code Business Process Management platform for building and
 running structured document workflows. Core concepts these plugins work with:
 
 - **Application / Process** — containers grouping related workflows (e.g. "Invoices", "Delegations").

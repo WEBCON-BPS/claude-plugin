@@ -5,7 +5,7 @@
     "email": "rnd@webcon.com"
   },
   "metadata": {
-    "description": "Webcon community marketplace of Claude Code plugins (skills, MCP config) for working with WEBCON BPS.",
+    "description": "Webcon community marketplace of Claude Code plugins (skills, MCP config) for working with WEBCON.",
     "ticket": "BT-US/7059",
     "repository": "https://github.com/WEBCON-BPS/claude-plugin"
   },
