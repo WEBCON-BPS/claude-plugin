@@ -1,66 +1,22 @@
-WEBCON Claude Code Plugin Marketplace — License and Terms of Use
+MIT License
 
-Copyright (c) 2026 WEBCON S.A. All rights reserved.
+Copyright (c) 2026 WEBCON S.A.
 
-------------------------------------------------------------------------
-DRAFT — PENDING LEGAL REVIEW
-This document is a placeholder prepared for the BT-US/7059 PoC. It has NOT
-been reviewed or approved by WEBCON legal. Do not rely on it as final terms
-and do not publish this marketplace publicly until legal has reviewed and
-approved the wording below (see docs/plan.md, license/terms open question).
-------------------------------------------------------------------------
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Definitions
-   "Software" means the contents of this repository, including the plugin
-   manifests, skills, prompts, configuration, and documentation that make up
-   the WEBCON Claude Code plugin marketplace.
-   "WEBCON" means WEBCON S.A., the copyright holder.
-   "You" means the individual or entity exercising rights under these terms.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-2. Ownership
-   The Software is proprietary to WEBCON and is protected by copyright and
-   other intellectual property laws. WEBCON retains all right, title, and
-   interest in and to the Software. No ownership rights are transferred.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-3. Grant of use
-   Subject to these terms and to WEBCON's End User License Agreement (EULA)
-   and Master Subscription Agreement (MSA) referenced in section 9, WEBCON
-   grants You a limited, non-exclusive, non-transferable, revocable license to
-   install and use the Software solely to interact with WEBCON
-   environments You are authorized to access. Use with a WEBCON MCP server
-   requires a valid WEBCON license and credentials for the target environment.
-
-4. Restrictions
-   You may not, except as expressly permitted in writing by WEBCON:
-   (a) redistribute, sublicense, sell, or host the Software for third parties;
-   (b) modify, adapt, or create derivative works from the Software;
-   (c) remove or alter any copyright, trademark, or proprietary notices;
-   (d) use the WEBCON name or trademarks except to identify the Software.
-
-5. No warranty
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
-
-6. Limitation of liability
-   TO THE MAXIMUM EXTENT PERMITTED BY LAW, WEBCON SHALL NOT BE LIABLE FOR ANY
-   INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY
-   LOSS OF PROFITS OR DATA, ARISING OUT OF OR RELATED TO THE SOFTWARE.
-
-7. Termination
-   This license terminates automatically if You breach any term. On
-   termination You must stop using and delete all copies of the Software.
-
-8. Governing law
-   These terms are governed by the laws of Poland, without regard to conflict
-   of law rules. [Placeholder — confirm jurisdiction/venue with legal.]
-
-9. Applicable WEBCON agreements
-   Your use of the Software is also subject to WEBCON's standard legal
-   documents. In case of any conflict, those documents prevail over this file:
-   - End User License Agreement (EULA): https://webcon.com/eula/
-   - Master Subscription Agreement (MSA): https://webcon.com/master-subscription-agreement/
-   - Privacy Policy: https://webcon.com/privacy-policy/
-
-10. Contact
-   WEBCON S.A. — https://webcon.com — https://webcon.com/contact/
