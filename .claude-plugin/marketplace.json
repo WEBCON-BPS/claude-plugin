@@ -1,0 +1,31 @@
+{
+  "name": "webcon-marketplace",
+  "owner": {
+    "name": "WEBCON",
+    "email": "rnd@webcon.com"
+  },
+  "metadata": {
+    "description": "Official WEBCON marketplace of Claude Code plugins for working with the WEBCON platform.",
+    "repository": "https://github.com/WEBCON-BPS/claude-plugin"
+  },
+  "plugins": [
+    {
+      "name": "webcon-mcp-assistant",
+      "source": "./plugins/webcon-mcp-assistant",
+      "description": "Read-only assistant for the General WEBCON MCP server (tasks, elements, search, navigation).",
+      "version": "0.3.0",
+      "author": {
+        "name": "WEBCON"
+      }
+    },
+    {
+      "name": "webcon-ai-agent-builder",
+      "source": "./plugins/webcon-ai-agent-builder",
+      "description": "Author and refine step-level instructions for WEBCON AI agents in workflow automation.",
+      "version": "0.1.0",
+      "author": {
+        "name": "WEBCON"
+      }
+    }
+  ]
+}

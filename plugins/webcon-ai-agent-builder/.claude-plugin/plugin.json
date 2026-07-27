@@ -1,0 +1,9 @@
+{
+  "name": "webcon-ai-agent-builder",
+  "description": "Author and refine step-level instructions for WEBCON AI agents in workflow automation.",
+  "version": "0.1.0",
+  "author": {
+    "name": "WEBCON"
+  },
+  "keywords": ["webcon", "ai-agent", "instructions", "workflow"]
+}
