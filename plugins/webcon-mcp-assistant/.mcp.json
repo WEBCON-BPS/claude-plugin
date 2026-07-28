@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "webcon": {
+      "type": "http",
+      "url": "${user_config.mcp_url}",
+      "oauth": {
+        "clientId": "${user_config.mcp_client_id}",
+        "clientSecret": "${user_config.mcp_client_secret}",
+        "callbackPort": 8123,
+        "scopes": "${user_config.mcp_scopes}"
+      }
+    }
+  }
+}

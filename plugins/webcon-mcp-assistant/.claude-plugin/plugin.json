@@ -1,0 +1,36 @@
+{
+  "name": "webcon-mcp-assistant",
+  "description": "Read-only assistant skill for the General WEBCON MCP server (tasks, elements, search, navigation).",
+  "version": "0.3.0",
+  "author": {
+    "name": "WEBCON"
+  },
+  "keywords": ["webcon", "mcp", "tasks", "search"],
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "WEBCON MCP server URL",
+      "description": "MCP endpoint of your WEBCON server (the /docs link with /docs stripped), e.g. https://mcp.webconbps.com/api/mcp/server/1",
+      "required": true
+    },
+    "mcp_client_id": {
+      "type": "string",
+      "title": "WEBCON OAuth client ID",
+      "description": "Client ID of the OAuth client (API Key) your WEBCON admin pre-registered for this MCP server (Authorization Code + PKCE).",
+      "required": true
+    },
+    "mcp_client_secret": {
+      "type": "string",
+      "title": "WEBCON OAuth client secret",
+      "description": "Client secret issued when the OAuth client was registered in WEBCON. Stored in the OS keychain, never committed.",
+      "sensitive": true,
+      "required": true
+    },
+    "mcp_scopes": {
+      "type": "string",
+      "title": "WEBCON OAuth scopes",
+      "description": "Exact space-separated scopes registered for this client (from the server /docs page or /.well-known/oauth-protected-resource), e.g. Mcp.Tools User.Elements.Read.All openid profile email",
+      "required": true
+    }
+  }
+}
