@@ -2,11 +2,11 @@
   "name": "webcon-marketplace",
   "owner": {
     "name": "WEBCON",
-    "email": "rnd@webcon.com"
+    "email": "rnd@webcon.com",
+    "url": "https://github.com/WEBCON-BPS/claude-plugin"
   },
   "metadata": {
-    "description": "Official WEBCON marketplace of Claude Code plugins for working with the WEBCON platform.",
-    "repository": "https://github.com/WEBCON-BPS/claude-plugin"
+    "description": "Official WEBCON marketplace of Claude Code plugins for working with the WEBCON platform."
   },
   "plugins": [
     {
@@ -16,7 +16,10 @@
       "version": "0.3.0",
       "author": {
         "name": "WEBCON"
-      }
+      },
+      "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-mcp-assistant",
+      "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+      "license": "MIT"
     },
     {
       "name": "webcon-ai-agent-builder",
@@ -25,7 +28,22 @@
       "version": "0.1.0",
       "author": {
         "name": "WEBCON"
-      }
+      },
+      "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-ai-agent-builder",
+      "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+      "license": "MIT"
+    },
+    {
+      "name": "webcon-ai-prompt-builder",
+      "source": "./plugins/webcon-ai-prompt-builder",
+      "description": "Build effective prompts for the WEBCON \"AI Prompt\" business rule.",
+      "version": "0.1.0",
+      "author": {
+        "name": "WEBCON"
+      },
+      "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-ai-prompt-builder",
+      "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+      "license": "MIT"
     }
   ]
 }

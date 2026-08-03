@@ -22,7 +22,7 @@ Learn more at [webcon.com](https://webcon.com).
 |---|---|---|
 | [`webcon-mcp-assistant`](plugins/webcon-mcp-assistant/) | Read-only assistant for the General WEBCON MCP server — find tasks, track workflow instances, review attachments, and search documents and records. | Available (v0.3.0) |
 | [`webcon-ai-agent-builder`](plugins/webcon-ai-agent-builder/) | Create and improve step-level instructions for WEBCON AI agents (agent behavior for workflow automation). | Available (v0.1.0) |
-| `webcon-ai-prompt-builder` | Build effective prompts for the WEBCON "AI Prompt" business rule. | Planned |
+| [`webcon-ai-prompt-builder`](plugins/webcon-ai-prompt-builder/) | Build effective prompts for the WEBCON "AI Prompt" business rule. | Available (v0.1.0) |
 
 Each available plugin has its own README under [`plugins/`](plugins/) with full details.
 
@@ -44,6 +44,7 @@ active Claude Code session, not in your OS shell. They are identical on
 ```text
 /plugin install webcon-mcp-assistant@webcon-marketplace
 /plugin install webcon-ai-agent-builder@webcon-marketplace
+/plugin install webcon-ai-prompt-builder@webcon-marketplace
 ```
 
 ### Alternative: install from your shell (non-interactive)
@@ -56,6 +57,7 @@ are identical on Windows, macOS, and Linux:
 claude plugin marketplace add WEBCON-BPS/claude-plugin
 claude plugin install webcon-mcp-assistant@webcon-marketplace
 claude plugin install webcon-ai-agent-builder@webcon-marketplace
+claude plugin install webcon-ai-prompt-builder@webcon-marketplace
 ```
 
 Add `--scope project` to share the install with everyone who clones a repo, or
@@ -81,7 +83,8 @@ these later, reopen the plugin's configuration in `/plugin`.
 The bundled `webcon-mcp-setup` skill walks you (and your admin) through the
 whole thing — just ask Claude to *"set up my WEBCON MCP server"*.
 
-`webcon-ai-agent-builder` needs no configuration — it is a pure-content skill.
+`webcon-ai-agent-builder` and `webcon-ai-prompt-builder` need no configuration —
+they are pure-content skills.
 
 ## Example usage
 
@@ -101,6 +104,13 @@ Show the attachments on instance INV/2026/0042 and summarize them.
 ```
 Write an agent instruction that classifies an incoming ticket and routes it to the right path.
 Improve this step instruction so it extracts the vendor, amount, and due date from the attached PDF invoice.
+```
+
+**`webcon-ai-prompt-builder` — author AI Prompt business rules**
+
+```
+Write a prompt that picks the right cost account from the invoice description and department.
+Help me classify whether the email in {WFCON:EmailBody} is a complaint or an enquiry.
 ```
 
 ## Company & license
