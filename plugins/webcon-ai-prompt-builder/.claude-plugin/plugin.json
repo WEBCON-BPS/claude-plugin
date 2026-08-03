@@ -1,0 +1,15 @@
+{
+  "name": "webcon-ai-prompt-builder",
+  "displayName": "WEBCON AI Prompt Builder",
+  "description": "Build effective prompts for the WEBCON \"AI Prompt\" business rule.",
+  "version": "0.1.0",
+  "author": {
+    "name": "WEBCON",
+    "email": "rnd@webcon.com",
+    "url": "https://webcon.com"
+  },
+  "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-ai-prompt-builder",
+  "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+  "license": "MIT",
+  "keywords": ["webcon", "ai-prompt", "business-rule", "prompting"]
+}

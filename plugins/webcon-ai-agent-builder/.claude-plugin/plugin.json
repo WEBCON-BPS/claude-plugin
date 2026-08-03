@@ -1,9 +1,15 @@
 {
   "name": "webcon-ai-agent-builder",
+  "displayName": "WEBCON AI Agent Builder",
   "description": "Author and refine step-level instructions for WEBCON AI agents in workflow automation.",
   "version": "0.1.0",
   "author": {
-    "name": "WEBCON"
+    "name": "WEBCON",
+    "email": "rnd@webcon.com",
+    "url": "https://webcon.com"
   },
+  "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-ai-agent-builder",
+  "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+  "license": "MIT",
   "keywords": ["webcon", "ai-agent", "instructions", "workflow"]
 }

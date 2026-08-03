@@ -7,13 +7,19 @@ description: Use this skill when the user wants to create or improve AI agent in
 
 Helps users create or improve instructions for WEBCON AI agents. Two modes: (1) create new, (2) modify existing based on reasoning.
 
-## Platform concepts
+## WEBCON Platform
 
-- **Application / Process** - containers grouping workflows (e.g. "Invoices").
-- **Workflow instance** - one case/item/request; has an instance number, current step, form.
-- **Step** - stage where an instance awaits action. **Transition path** - route to next step.
-- **Form / Attribute (field)** - fields holding instance data. **Item list** - table in a form. **Attachments** - files on an instance.
-- **System tags**: `{WFCON:ID}` field, `{BRD:ID}` business rule result, `{PH:ID}` path. `{XX}` returns the field's current value.
+WEBCON is a business process management platform for structured document workflows. Key concepts:
+
+- **Application / Process** — organisational containers grouping related workflows (e.g. "Invoices", "Delegations").
+- **Workflow instance** — a single case or record moving through a process (users call these "items", "cases", or "requests"). Each has a human-readable **instance number**, a current **step**, and a **form**.
+- **Step** — the stage in the workflow where an instance awaits action.
+- **Transition path** — a possible route to the next step.
+- **Form** — fields and sections holding the instance's data.
+- **Form fields (sometimes referred to as "attributes")** — a single value in the form.
+- **Item list (sub-elements)** — a table embedded in a form.
+- **Attachments** — files added to an instance.
+- **System tags** — references to platform objects: `{WFCON:ID}` (form field identifier), `{BRD:ID}` (business rule result), `{PH:ID}` (transition path).
 
 ## Context
 

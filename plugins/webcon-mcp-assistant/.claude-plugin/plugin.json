@@ -1,10 +1,16 @@
 {
   "name": "webcon-mcp-assistant",
+  "displayName": "WEBCON MCP Assistant",
   "description": "Read-only assistant skill for the General WEBCON MCP server (tasks, elements, search, navigation).",
   "version": "0.3.0",
   "author": {
-    "name": "WEBCON"
+    "name": "WEBCON",
+    "email": "rnd@webcon.com",
+    "url": "https://webcon.com"
   },
+  "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-mcp-assistant",
+  "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+  "license": "MIT",
   "keywords": ["webcon", "mcp", "tasks", "search"],
   "userConfig": {
     "mcp_url": {
