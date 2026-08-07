@@ -1,28 +1,19 @@
 # WEBCON Claude Code Marketplace
 
 The official [Claude Code](https://code.claude.com/docs) plugin marketplace for
-**WEBCON** — read workflow data through the WEBCON MCP server and author
-AI-agent instructions for WEBCON automation, without leaving your editor.
+**WEBCON**.
 
 ## About WEBCON
 
-WEBCON is a low-code Business Process Management platform for building and
-running structured document workflows. Core concepts these plugins work with:
-
-- **Application / Process** — containers grouping related workflows (e.g. "Invoices", "Delegations").
-- **Workflow instance** — a single case/item/request moving through a process, with an instance number, a current step, and a form.
-- **Step** — the stage where an instance awaits action; **transition paths** route it to the next step.
-- **Form / Attribute (field)** — the data held on an instance; **item lists** are tables in a form and **attachments** are files on it.
-
-Learn more at [webcon.com](https://webcon.com).
+WEBCON is a model-driven business process automation platform. Learn more at [webcon.com](https://webcon.com)
 
 ## Plugins
 
 | Plugin | Description | Status |
 |---|---|---|
-| [`webcon-mcp-assistant`](plugins/webcon-mcp-assistant/) | Read-only assistant for the General WEBCON MCP server — find tasks, track workflow instances, review attachments, and search documents and records. | Available (v0.3.0) |
-| [`webcon-ai-agent-builder`](plugins/webcon-ai-agent-builder/) | Create and improve step-level instructions for WEBCON AI agents (agent behavior for workflow automation). | Available (v0.1.0) |
-| [`webcon-ai-prompt-builder`](plugins/webcon-ai-prompt-builder/) | Build effective prompts for the WEBCON "AI Prompt" business rule. | Available (v0.1.0) |
+| [`webcon-mcp-assistant`](plugins/webcon-mcp-assistant/) | Connect to WEBCON. Check tasks, search instances, navigate Portal, and read attachments. Every call respects your WEBCON roles and permissions. | Available (v0.3.0) |
+| [`webcon-ai-agent-builder`](plugins/webcon-ai-agent-builder/) | Write instructions for WEBCON AI Agent. Describe your goal and get a well-structured instruction ready to use in Designer Studio.  | Available (v0.1.0) |
+| [`webcon-ai-prompt-builder`](plugins/webcon-ai-prompt-builder/) | Write instructions for WEBCON AI Prompt business rule. Describe your goal and get multiple well-structured prompt variants ready to use in Designer Studio. | Available (v0.1.0) |
 
 Each available plugin has its own README under [`plugins/`](plugins/) with full details.
 
@@ -110,7 +101,7 @@ Improve this step instruction so it extracts the vendor, amount, and due date fr
 
 ```
 Write a prompt that picks the right cost account from the invoice description and department.
-Help me classify whether the email in {WFCON:EmailBody} is a complaint or an enquiry.
+Help me classify whether attached email is a complaint or an enquiry.
 ```
 
 ## Company & license

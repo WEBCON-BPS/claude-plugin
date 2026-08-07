@@ -1,11 +1,13 @@
 # `webcon-mcp-assistant`
 
-A read-only assistant for the General **WEBCON MCP server** — find your tasks,
-track workflow instances, review attachments, and search documents and business
-records, straight from Claude.
+Guide for using WEBCON MCP Server tools through Claude - patterns and assistance for common tasks.
 
 See the official WEBCON documentation for details on the MCP server, its tools,
 and authentication: [MCP Servers (WEBCON docs)](https://docs.webcon.com/docs/2026R2/Studio/MCPServers).
+
+## What it does
+
+Skill activates automatically when you ask Claude about things in your WEBCON environment, such as tasks, instances and available applications. It can also help you navigate the Portal and find reports, dashbords and start buttons.
 
 ## Configuration (on-prem vs. SaaS)
 
