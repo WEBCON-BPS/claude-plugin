@@ -1,7 +1,6 @@
 # `webcon-ai-agent-builder`
 
-Helps you **write and refine the step-level instructions that drive WEBCON AI
-agents** in workflow automation.
+Helps you write instructions for WEBCON AI Agent.
 
 ## What it does
 
@@ -9,21 +8,10 @@ Given a business process, workflow, and target step, the skill produces a
 clear, Markdown-formatted agent instruction (goal + numbered steps) that a
 WEBCON AI agent can execute. It works in two modes:
 
-1. **Create new** — turn a described task into a well-formed instruction.
-2. **Modify existing** — improve a current instruction based on the user's
-   reasoning and expected behaviour.
+1. **Write a new agent instruction** - Explain what the agent should do and get a well-structured, step-by-step instruction ready to use in Designer Studio.
+2. **Improve an existing instruction** - Provide: current instructions; reasoning from last execution; description of the expected result. As a result, get a refined, more robust instructions.
 
-It encodes WEBCON-specific conventions so the output is correct by
-construction, including:
-
-- Using only the actions a WEBCON agent actually has (set field, picker field,
-  item-list row, choose path) and never inventing capabilities it lacks.
-- Referencing form objects with system tags — `{WFCON:...}` (field),
-  `{BRD:...}` (business rule), `{PH:...}` (path).
-- The **pipeline, not loop** execution model: enforce every constraint inside
-  the step that produces a value, never in a separate retry step.
-- Pushing deterministic branching (thresholds, exact-match routing) out to
-  standard WEBCON business rules instead of asking the LLM to do fixed logic.
+It order for the instructions to be more accurate, the created prompt may contain placeholders for variables/references (example: from the form - via `{WFCON:...}` - or from business rules - via `{BRD:...}` - or from a transition path - via `{PH:...}`). Your task will be to replace them with actual variables in the Designer Studio editor.
 
 ## When Claude uses it
 

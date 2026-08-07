@@ -1,31 +1,14 @@
 # `webcon-ai-prompt-builder`
 
-Helps you **write effective prompts for the WEBCON "AI Prompt" business rule** —
-the rule that sends a single query to an LLM and returns a single text value.
+Write instructions for WEBCON AI Prompt business rule.
 
 ## What it does
 
-Given a task described in plain language, the skill proposes **at least two
-prompt variants**, each labelled with the strategy it uses and when that
-strategy is the right choice:
+Given a task described in plain language, the skill proposes at least two
+prompt variants, each labelled with the strategy it uses and when that
+strategy is the right choice.
 
-- **Zero-Shot** — a direct instruction, for simple unambiguous tasks.
-- **Few-Shot** — instruction plus `input -> expected output` examples, for
-  classification and data extraction where the format matters.
-- **Persona** — assigns the model a domain-expert role, for tasks needing
-  specialist judgement.
-
-It encodes the rule's actual constraints so the output works by construction:
-
-- Dynamic values come from the form via `{WFCON:...}` or from other business
-  rules via `{BRD:...}`, and every prompt ends with an explicit list of its
-  inputs.
-- Attachments cannot be embedded in the prompt text — the skill directs you to
-  pass them through the rule's first parameter using `GET ATTACHMENTS`.
-- The result is always **one text string**. When a task needs several values,
-  the skill recommends either splitting it across multiple `AI PROMPT` rules or
-  returning a parseable format (`;`-delimited for `GET AT INDEX`, or JSON for a
-  JS form rule / `SQL COMMAND`).
+It order for the instructions to be more accurate, the created prompt may contain placeholders for variables/references (example: from the form - via `{WFCON:...}` - or from business rules - via `{BRD:...}`). Your task will be to replace them with actual variables in the Designer Studio editor.
 
 ## When Claude uses it
 
