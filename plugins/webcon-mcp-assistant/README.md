@@ -80,7 +80,6 @@ type **user context**, authentication **Authorization code**):
    the application has to be enabled. As a bonus, refresh tokens let Claude
    renew the access token silently instead of re-opening the browser login.
 
-
 **To change the values later**, open the `/plugin` interface, select this
 plugin, and re-enter its configuration (or edit the non-sensitive values in
 `settings.json`). No credentials are ever stored in this repository.
