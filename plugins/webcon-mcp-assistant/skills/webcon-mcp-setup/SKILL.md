@@ -29,13 +29,16 @@ the client is not registered correctly first.
 Ask the user for their server's **docs link**, e.g.:
 
 ```
-https://mcp.webconbps.com/api/mcp/server/1/docs
+https://<their-webcon-host>/api/mcp/server/<N>/docs
 ```
+
+Every WEBCON installation has its own host, on-prem or SaaS. Never assume one,
+and never carry a host or a server number from this guide into what you produce.
 
 From that one link, derive (use WebFetch to read the docs page and the metadata):
 
 1. **MCP endpoint URL** = the docs link with `/docs` stripped:
-   `https://mcp.webconbps.com/api/mcp/server/1`
+   `https://<their-webcon-host>/api/mcp/server/<N>`
 2. **Server slug** for naming = `server-<N>` (here `server-1`).
 3. **Required scopes** — read them from the docs page ("Required Scopes") AND/OR
    from `<origin>/.well-known/oauth-protected-resource`. Example for server 1:
@@ -110,8 +113,8 @@ single registered client supports both.
 
 1. Open **Settings → Connectors → Add custom connector**.
 2. **Name:** `WEBCON <app/server name>` (e.g. `WEBCON Server 1`).
-3. **Remote MCP server URL:** the MCP endpoint from Phase 0
-   (`https://mcp.webconbps.com/api/mcp/server/1`) — **not** the `/docs` URL.
+3. **Remote MCP server URL:** the MCP endpoint from Phase 0 — **not** the
+   `/docs` URL.
 4. Under **Advanced settings**, provide the **OAuth Client ID** and **OAuth Client
    Secret** from Phase 1 (required because the server has no dynamic client
    registration).
@@ -125,13 +128,16 @@ Generate this command, filling in the derived URL and scopes, and have the user
 paste their Client ID (the secret is prompted for by `--client-secret`):
 
 ```bash
-claude mcp add-json webcon-server-1 \
-  '{"type":"http","url":"https://mcp.webconbps.com/api/mcp/server/1","oauth":{"clientId":"<ClientId>","callbackPort":8123,"scopes":"Mcp.Tools User.Elements.Read.All openid profile email"}}' \
+claude mcp add-json <server-name> \
+  '{"type":"http","url":"<their MCP endpoint>","oauth":{"clientId":"<ClientId>","callbackPort":8123,"scopes":"<the scopes derived in Phase 0>"}}' \
   --client-secret --scope user
 ```
 
 Notes:
 
+- `<server-name>` is yours to choose; `webcon-server-<N>` from the endpoint's last
+  path segment is a good default. Use it consistently in `/mcp` and in the
+  `login`/`logout` commands below.
 - `callbackPort` **must** match the localhost redirect registered in Phase 1 (8123).
 - `--scope user` makes the server available in all of the user's projects. Use
   `--scope project` to commit it to a specific repo's `.mcp.json` instead.
@@ -145,9 +151,9 @@ Then trigger login:
 /mcp
 ```
 
-Select `webcon-server-1` and complete the browser login (localhost redirect).
-Re-login later with `claude mcp login webcon-server-1`; clear creds with
-`claude mcp logout webcon-server-1`.
+Select the server you just added and complete the browser login (localhost
+redirect). Re-login later with `claude mcp login <server-name>`; clear creds
+with `claude mcp logout <server-name>`.
 
 ---
 
@@ -164,7 +170,7 @@ Confirm the connection works before declaring success:
 
 > **Tool routing must be prefix-agnostic.** The MCP tools appear as
 > `mcp__<server>__GetMyTasks`, `mcp__<server>__GetApplications`, etc. The server
-> segment varies (it may be a GUID or `webcon-server-1`). When routing to WEBCON
+> segment varies (it may be a GUID or a name like `webcon-server-2`). When routing to WEBCON
 > tools, match on the **suffix** (`GetMyTasks`, `GetElement`, …), never on a
 > hardcoded server name.
 
