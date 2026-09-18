@@ -39,6 +39,14 @@ supplied. On first connection Claude Code opens a browser login; every MCP
 operation then runs as the signed-in user, respecting that user's WEBCON roles
 and privileges.
 
+### Generating the connect command
+
+Run **`/webcon-mcp-assistant:connect <server URL>`** and Claude reads the
+server's own OAuth metadata, pins the exact scopes it declares, and prints a
+ready-to-paste `claude mcp add-json` line for both bash and PowerShell. It also
+offers a preflight check that validates the redirect URI, the granted scopes and
+the offline access setting with a single request, before anyone signs in.
+
 An administrator must first register the OAuth client in WEBCON (Authorization
 Code + PKCE, the exact scopes above, and the MCP client's redirect URL). For the
 end-to-end walkthrough — deriving the URL and scopes from the server `/docs`
@@ -94,6 +102,8 @@ for on-prem and cloud SaaS installations — there is no per-customer build.
 
 - `.claude-plugin/plugin.json` — plugin manifest, including the `userConfig` prompt schema.
 - `.mcp.json` — MCP server registration (driven by `${user_config.*}`, see above).
+- `commands/connect.md` — the `/webcon-mcp-assistant:connect` command, which
+  generates the `claude mcp add-json` line for a given server.
 - `skills/webcon-mcp-assistant/` — the read-only assistant skill.
 - `skills/webcon-mcp-setup/` — step-by-step guide for connecting and authenticating a WEBCON MCP server.
 

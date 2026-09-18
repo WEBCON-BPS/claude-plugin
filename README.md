@@ -71,6 +71,11 @@ On first use Claude Code opens a browser login; every MCP call then runs as the
 signed-in user, respecting that user's WEBCON roles and privileges. To change
 these later, reopen the plugin's configuration in `/plugin`.
 
+To get the exact CLI command for your own server, run
+`/webcon-mcp-assistant:connect <server URL>`. It reads the scopes from the
+server, prints a ready-to-paste `claude mcp add-json` line, and can verify the
+OAuth client before you sign in.
+
 The bundled `webcon-mcp-setup` skill walks you (and your admin) through the
 whole thing — just ask Claude to *"set up my WEBCON MCP server"*.
 
