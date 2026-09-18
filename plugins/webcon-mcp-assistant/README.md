@@ -46,8 +46,40 @@ link, registering the client, and wiring both Claude.ai and Claude Code — see
 the bundled **[`webcon-mcp-setup`](skills/webcon-mcp-setup/SKILL.md)** skill and
 the [WEBCON docs](https://docs.webcon.com/docs/2026R2/Studio/MCPServers#configuration-and-setup).
 
-> **Verified.** This OAuth flow is confirmed working end to end with the Claude
-> Code CLI, the MCP Inspector, and LiteLLM MCP clients.
+### Registering the API application in WEBCON (admin checklist)
+
+Two settings are easy to miss when the administrator registers the API
+application (**Admin Panel → Integrations → API → New API application**,
+type **user context**, authentication **Authorization code**):
+
+1. **Authorized redirect URIs** — WEBCON only accepts a redirect URL that is
+   registered *exactly* here. Register the entry for each surface you use:
+
+   | Surface | Redirect URI to register |
+   |---|---|
+   | Claude Code CLI / this plugin | `http://localhost:8123/callback` |
+   | Claude.ai (web) / Claude Desktop connector | `https://claude.ai/api/mcp/auth_callback` |
+
+   By default Claude Code picks a **random localhost port** for the OAuth
+   callback, so the redirect URL would differ on every login and could never be
+   pre-registered. That is why this plugin pins the port with
+   `"callbackPort": 8123` in `.mcp.json`. If you add the server manually with
+   `claude mcp add-json`, keep the same `"oauth": { "callbackPort": 8123 }`, or
+   pick another free port and register `http://localhost:<port>/callback`
+   instead — the port in WEBCON and in `callbackPort` must match.
+
+2. **Authorization flows configuration → Allow offline access (issue Refresh
+   Tokens)** — tick this checkbox (it sits right under **Authentication type:
+   Authorization code**).
+   Claude Code automatically appends the `offline_access` scope to the
+   authorize request whenever the WEBCON authorization server advertises it in
+   `/.well-known/openid-configuration` (which it does), so the login fails with
+   an *invalid scope* error if the application is not allowed to issue refresh
+   tokens. You do **not** need to add `offline_access` to the plugin's
+   **WEBCON OAuth scopes** field — Claude adds it on its own; only the option on
+   the application has to be enabled. As a bonus, refresh tokens let Claude
+   renew the access token silently instead of re-opening the browser login.
+
 
 **To change the values later**, open the `/plugin` interface, select this
 plugin, and re-enter its configuration (or edit the non-sensitive values in

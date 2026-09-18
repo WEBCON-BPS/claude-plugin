@@ -71,10 +71,20 @@ user** who will use the connection. Tell the admin to register an OAuth client
   | Claude.ai (web) / Claude Desktop connector | `https://claude.ai/api/mcp/auth_callback` |
   | Claude Code CLI / plugin | `http://localhost:8123/callback` |
 
-  > The CLI redirect is `http://localhost:<PORT>/callback`. This guide
+  > Claude Code picks a **random** localhost port for the OAuth callback unless
+  > `callbackPort` is pinned, which is why the redirect URL must be fixed on
+  > both sides. The CLI redirect is `http://localhost:<PORT>/callback`. This guide
   > standardizes on port **8123**. If 8123 is already used on the user's machine,
   > pick another free port and register `http://localhost:<that-port>/callback`
   > instead — the port here must match the `callbackPort` used in Phase 2B.
+
+- **Allow offline access (issue Refresh Tokens): checked.** In the API
+  application's *Authorization flows configuration* section, right under
+  *Authentication type: Authorization code*, tick this checkbox. Claude Code appends the `offline_access` scope to the
+  authorize request automatically because the WEBCON authorization server
+  advertises it in `/.well-known/openid-configuration`; if the application is
+  not allowed to issue refresh tokens the login fails with an *invalid scope*
+  error. Do **not** add `offline_access` to the pinned scopes — Claude adds it.
 
 Registration output the user must copy:
 
@@ -163,5 +173,7 @@ Confirm the connection works before declaring success:
 | `Incompatible auth server: does not support dynamic client registration` | No client_id supplied (CLI) | Add `--client-id`/`clientId`; complete Phase 1 first |
 | Login opens then fails with redirect mismatch | Wrong/missing redirect URI in WEBCON | Register the exact redirect for the surface (table in Phase 1); CLI port must equal `callbackPort` |
 | Login succeeds but tools error / fewer scopes | Scopes not pinned, or client lacks a scope | Pin exact scopes from `/docs`; have admin grant them to the client |
+| Login fails with `invalid_scope` and the URL ends with `+offline_access` | Claude Code appended `offline_access` (advertised by the WEBCON auth server) but the API application cannot issue refresh tokens | Admin ticks **Allow offline access (issue Refresh Tokens)** on the API application (Phase 1); do not add `offline_access` to `oauth.scopes` |
+| Login URL contains a literal `client_id=${user_config.mcp_client_id}` | Claude Code does not substitute `${user_config.*}` inside the `oauth` block of a plugin `.mcp.json` ([anthropics/claude-code#89969](https://github.com/anthropics/claude-code/issues/89969)) | Add the server with `claude mcp add-json` (Phase 2B) and an explicit `clientId`; run `claude mcp logout <server>` first so the cached placeholder client is dropped |
 | Metadata not discovered | `.well-known/oauth-protected-resource` unreachable | Set `oauth.authServerMetadataUrl` in the config as an override |
 | `/docs` link given as the MCP URL | Trailing `/docs` not stripped | Use the base endpoint `.../api/mcp/server/N` |
