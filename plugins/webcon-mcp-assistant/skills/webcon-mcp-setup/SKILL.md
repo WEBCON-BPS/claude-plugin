@@ -60,8 +60,7 @@ Present the derived values back to the user and confirm before proceeding.
 
 ## Phase 1 — Admin registers the OAuth client in WEBCON (human step)
 
-This must be done by someone with admin rights in WEBCON, **in the context of the
-user** who will use the connection. Tell the admin to register an OAuth client
+This must be done by someone with admin rights in WEBCON. Tell the admin to register an OAuth client
 (API Key) with:
 
 - **Application type: user context.** An *application context* API application
