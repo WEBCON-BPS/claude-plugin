@@ -61,6 +61,10 @@ This must be done by someone with admin rights in WEBCON, **in the context of th
 user** who will use the connection. Tell the admin to register an OAuth client
 (API Key) with:
 
+- **Application type: user context.** An *application context* API application
+  cannot be used: it only supports the client credentials grant, and WEBCON hides
+  the *Authorized redirect URIs* and *Authorization flows configuration* sections
+  for it, so neither the redirect URI nor offline access can be set.
 - **Grant type:** Authorization Code (+ PKCE)
 - **Scopes:** exactly the ones derived in Phase 0
 - **Redirect URI(s):** register **both** of the following so the same client works
@@ -175,5 +179,6 @@ Confirm the connection works before declaring success:
 | Login succeeds but tools error / fewer scopes | Scopes not pinned, or client lacks a scope | Pin exact scopes from `/docs`; have admin grant them to the client |
 | Login fails with `invalid_scope` and the URL ends with `+offline_access` | Claude Code appended `offline_access` (advertised by the WEBCON auth server) but the API application cannot issue refresh tokens | Admin ticks **Allow offline access (issue Refresh Tokens)** on the API application (Phase 1); do not add `offline_access` to `oauth.scopes` |
 | Browser lands on `/error?error=unauthorized_client&errorDescription=Unknown client or client not enabled`, and the login URL contains a literal `client_id=${user_config.mcp_client_id}` | Claude Code does not substitute `${user_config.*}` inside the `oauth` block of a plugin `.mcp.json` ([anthropics/claude-code#89969](https://github.com/anthropics/claude-code/issues/89969)) | Add the server with `claude mcp add-json` (Phase 2B) and an explicit `clientId`; run `claude mcp logout <server>` first so the cached placeholder client is dropped |
+| `Invalid redirect_uri` no matter what is registered, and the API application shows no *Authorized redirect URIs* section | The application is *application context*, not *user context*, so it only supports the client credentials grant | Register a new API application of type **user context** with authentication **Authorization code**; confirm with a token request: an application-context client answers `unauthorized_client` to `grant_type=authorization_code` |
 | Metadata not discovered | `.well-known/oauth-protected-resource` unreachable | Set `oauth.authServerMetadataUrl` in the config as an override |
 | `/docs` link given as the MCP URL | Trailing `/docs` not stripped | Use the base endpoint `.../api/mcp/server/N` |

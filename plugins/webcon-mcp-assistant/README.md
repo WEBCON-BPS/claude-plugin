@@ -51,6 +51,9 @@ the [WEBCON docs](https://docs.webcon.com/docs/2026R2/Studio/MCPServers#configur
 Two settings are easy to miss when the administrator registers the API
 application (**Admin Panel → Integrations → API → New API application**,
 type **user context**, authentication **Authorization code**):
+An *application context* application will not work and does not even show these
+two settings, because it only supports the client credentials grant.
+
 
 1. **Authorized redirect URIs** — WEBCON only accepts a redirect URL that is
    registered *exactly* here. Register the entry for each surface you use:
