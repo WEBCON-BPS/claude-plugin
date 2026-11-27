@@ -44,6 +44,18 @@
       "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-ai-prompt-builder",
       "repository": "https://github.com/WEBCON-BPS/claude-plugin",
       "license": "MIT"
+    },
+    {
+      "name": "webcon-designer-studio-mcp-skills",
+      "source": "./plugins/webcon-designer-studio-mcp-skills",
+      "description": "Set up configuration conventions and design, build, verify and publish WEBCON applications through the DesignerStudio MCP server.",
+      "version": "0.2.0",
+      "author": {
+        "name": "WEBCON"
+      },
+      "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-designer-studio-mcp-skills",
+      "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+      "license": "MIT"
     }
   ]
 }

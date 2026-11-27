@@ -14,6 +14,7 @@ WEBCON is a model-driven business process automation platform. Learn more at [we
 | [`webcon-mcp-assistant`](plugins/webcon-mcp-assistant/) | Connect to WEBCON. Check tasks, search instances, navigate Portal, and read attachments. Every call respects your WEBCON roles and permissions. | Available (v0.3.0) |
 | [`webcon-ai-agent-builder`](plugins/webcon-ai-agent-builder/) | Write instructions for WEBCON AI Agent. Describe your goal and get a well-structured instruction ready to use in Designer Studio.  | Available (v0.1.0) |
 | [`webcon-ai-prompt-builder`](plugins/webcon-ai-prompt-builder/) | Write instructions for WEBCON AI Prompt business rule. Describe your goal and get multiple well-structured prompt variants ready to use in Designer Studio. | Available (v0.1.0) |
+| [`webcon-designer-studio-mcp-skills`](plugins/webcon-designer-studio-mcp-skills/) | Set up configuration conventions, then design, build, verify and publish WEBCON applications through the DesignerStudio MCP server. | Preview (v0.2.0) |
 
 Each available plugin has its own README under [`plugins/`](plugins/) with full details.
 
@@ -36,6 +37,7 @@ active Claude Code session, not in your OS shell. They are identical on
 /plugin install webcon-mcp-assistant@webcon-marketplace
 /plugin install webcon-ai-agent-builder@webcon-marketplace
 /plugin install webcon-ai-prompt-builder@webcon-marketplace
+/plugin install webcon-designer-studio-mcp-skills@webcon-marketplace
 ```
 
 ### Alternative: install from your shell (non-interactive)
@@ -49,6 +51,7 @@ claude plugin marketplace add WEBCON-BPS/claude-plugin
 claude plugin install webcon-mcp-assistant@webcon-marketplace
 claude plugin install webcon-ai-agent-builder@webcon-marketplace
 claude plugin install webcon-ai-prompt-builder@webcon-marketplace
+claude plugin install webcon-designer-studio-mcp-skills@webcon-marketplace
 ```
 
 Add `--scope project` to share the install with everyone who clones a repo, or
