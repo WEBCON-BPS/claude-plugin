@@ -1,0 +1,42 @@
+{
+  "name": "webcon-designer-studio-mcp-skills",
+  "displayName": "WEBCON Designer Studio Skills",
+  "description": "Set up configuration conventions and design, build, verify and publish WEBCON applications through the DesignerStudio MCP server.",
+  "version": "0.2.0",
+  "author": {
+    "name": "WEBCON",
+    "email": "rnd@webcon.com",
+    "url": "https://webcon.com"
+  },
+  "homepage": "https://github.com/WEBCON-BPS/claude-plugin/tree/main/plugins/webcon-designer-studio-mcp-skills",
+  "repository": "https://github.com/WEBCON-BPS/claude-plugin",
+  "license": "MIT",
+  "keywords": ["webcon", "designer-studio", "mcp", "app-build", "conventions"],
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "DesignerStudio MCP server URL",
+      "description": "MCP endpoint of your WEBCON server (the /docs link with /docs stripped), e.g. https://mcp.webconbps.com/api/mcp/server/<server id>",
+      "required": true
+    },
+    "mcp_client_id": {
+      "type": "string",
+      "title": "WEBCON OAuth client ID",
+      "description": "Client ID of the OAuth client (API Key) your WEBCON admin pre-registered for this MCP server (Authorization Code + PKCE, user context).",
+      "required": true
+    },
+    "mcp_client_secret": {
+      "type": "string",
+      "title": "WEBCON OAuth client secret",
+      "description": "Client secret issued when the OAuth client was registered in WEBCON. Stored in the OS keychain, never committed.",
+      "sensitive": true,
+      "required": true
+    },
+    "mcp_scopes": {
+      "type": "string",
+      "title": "WEBCON OAuth scopes",
+      "description": "Exact space-separated scopes registered for this client (from the server /docs page or /.well-known/oauth-protected-resource), e.g. Mcp.Tools User.Designer.ReadWrite.All openid profile email",
+      "required": true
+    }
+  }
+}
